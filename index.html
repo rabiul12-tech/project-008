@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Magazine Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --accent-color: #2563eb;
+        --dark-bg: #1e293b;
+        --light-bg: #ffffff;
+        --text-dark: #1f2937;
+        --text-light: #f8fafc;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        --radius: 8px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--text-dark);
+        line-height: 1.6;
+        background-color: #f9fafb;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      header {
+        position: sticky;
+        top: 0;
+        background-color: var(--light-bg);
+        padding: 16px 0;
+        box-shadow: var(--shadow);
+        z-index: 100;
+      }
+
+      .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: var(--text-dark);
+      }
+
+      .logo span {
+        color: var(--accent-color);
+      }
+
+      .search-box {
+        flex: 0 1 400px;
+        position: relative;
+      }
+
+      .search-box input {
+        width: 100%;
+        padding: 10px 16px;
+        border: 1px solid #e5e7eb;
+        border-radius: var(--radius);
+        font-family: "Inter", sans-serif;
+      }
+
+      .search-box i {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #9ca3af;
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .newsletter-btn {
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: var(--radius);
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .newsletter-btn:hover {
+        background-color: #1d4ed8;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-dark);
+        border-radius: 2px;
+      }
+
+      /* Hero Section */
+      .hero {
+        background-color: var(--dark-bg);
+        color: var(--text-light);
+        padding: 60px 0;
+        position: relative;
+      }
+
+      .hero-container {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .hero-content {
+        flex: 1;
+      }
+
+      .hero-headline {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+
+      .hero-subhead {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+
+      .hero-cta {
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: var(--radius);
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .hero-cta:hover {
+        background-color: #1d4ed8;
+      }
+
+      .scroll-down {
+        margin-top: 40px;
+        display: inline-block;
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .hero-image {
+        flex: 1;
+        position: relative;
+      }
+
+      .hero-image img {
+        width: 100%;
+        border-radius: var(--radius);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .social-media {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--light-bg);
+        color: var(--dark-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .social-icon:hover {
+        background-color: var(--accent-color);
+        color: var(--light-bg);
+      }
+
+      /* Trending Blogs Section */
+      .section-title {
+        text-align: center;
+        margin: 60px 0 30px;
+        font-size: 2rem;
+        color: var(--text-dark);
+      }
+
+      .trending-blogs {
+        padding: 20px 0 50px;
+      }
+
+      .blog-cards {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 30px;
+      }
+
+      .blog-card {
+        flex: 1;
+        background-color: var(--light-bg);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .blog-card:hover .card-image img {
+        transform: scale(1.05);
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+
+      .card-category {
+        display: inline-block;
+        background-color: #dbeafe;
+        color: var(--accent-color);
+        font-size: 0.8rem;
+        padding: 4px 10px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+      }
+
+      .card-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .card-excerpt {
+        font-size: 0.9rem;
+        color: #6b7280;
+        margin-bottom: 15px;
+      }
+
+      .card-meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        color: #9ca3af;
+      }
+
+      .carousel-nav {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .carousel-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #e5e7eb;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .carousel-dot.active {
+        background-color: var(--accent-color);
+      }
+
+      /* Features Section */
+      .features {
+        padding: 50px 0;
+        background-color: var(--light-bg);
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 60px;
+      }
+
+      .feature-item:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .feature-image {
+        flex: 1;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .feature-image img {
+        width: 100%;
+        display: block;
+      }
+
+      .feature-content {
+        flex: 1;
+      }
+
+      .feature-title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+
+      .feature-excerpt {
+        margin-bottom: 20px;
+        color: #4b5563;
+      }
+
+      .read-more {
+        color: var(--accent-color);
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: gap 0.3s;
+      }
+
+      .read-more:hover {
+        gap: 10px;
+      }
+
+      .full-width-card {
+        position: relative;
+        height: 400px;
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin: 60px 0;
+        box-shadow: var(--shadow);
+      }
+
+      .full-width-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .overlay-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: var(--text-light);
+        padding: 30px;
+      }
+
+      .overlay-text h3 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      /* Promo Banner */
+      .promo-banner {
+        padding: 50px 0;
+      }
+
+      .banner {
+        position: relative;
+        height: 300px;
+        border-radius: var(--radius);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--text-light);
+      }
+
+      .banner-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      .banner-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .banner-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+      }
+
+      .banner-content {
+        max-width: 600px;
+        padding: 0 20px;
+        z-index: 1;
+      }
+
+      .banner-title {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+      }
+
+      .banner-description {
+        margin-bottom: 25px;
+        font-size: 1.1rem;
+      }
+
+      .banner-btn {
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: var(--radius);
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .banner-btn:hover {
+        background-color: #1d4ed8;
+      }
+
+      .banner-dots {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        gap: 8px;
+      }
+
+      /* Latest Stories */
+      .latest-stories {
+        padding: 50px 0;
+        background-color: #f9fafb;
+      }
+
+      .stories-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .story-card {
+        background-color: var(--light-bg);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .story-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .story-image {
+        height: 180px;
+        overflow: hidden;
+      }
+
+      .story-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .story-card:hover .story-image img {
+        transform: scale(1.05);
+      }
+
+      .story-content {
+        padding: 20px;
+      }
+
+      .story-title {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+
+      .story-excerpt {
+        font-size: 0.9rem;
+        color: #6b7280;
+      }
+
+      /* Recently Added Section */
+      .recently-added {
+        padding: 50px 0;
+      }
+
+      .recent-container {
+        display: flex;
+        gap: 30px;
+      }
+
+      .featured-post {
+        flex: 2;
+        position: relative;
+        height: 500px;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .featured-post img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .featured-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: var(--text-light);
+        padding: 30px;
+      }
+
+      .featured-title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+
+      .view-more-btn {
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        padding: 10px 20px;
+        border-radius: var(--radius);
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 15px;
+      }
+
+      .view-more-btn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .widgets {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .widget {
+        background-color: var(--dark-bg);
+        color: var(--text-light);
+        border-radius: var(--radius);
+        padding: 30px;
+        box-shadow: var(--shadow);
+      }
+
+      .widget-title {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+      }
+
+      .newsletter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .newsletter-form input {
+        padding: 12px 16px;
+        border: none;
+        border-radius: var(--radius);
+        font-family: "Inter", sans-serif;
+      }
+
+      .subscribe-btn {
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: var(--radius);
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .subscribe-btn:hover {
+        background-color: #1d4ed8;
+      }
+
+      .community-btn {
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        padding: 12px 24px;
+        border-radius: var(--radius);
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 100%;
+        margin-top: 15px;
+      }
+
+      .community-btn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark-bg);
+        color: var(--text-light);
+        padding: 60px 0 0;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        padding-bottom: 40px;
+      }
+
+      .footer-about p {
+        margin: 15px 0;
+        opacity: 0.8;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .footer-social a {
+        color: var(--text-light);
+        font-size: 1.2rem;
+        transition: color 0.3s;
+      }
+
+      .footer-social a:hover {
+        color: var(--accent-color);
+      }
+
+      .footer-links h4 {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: var(--text-light);
+        opacity: 0.8;
+        text-decoration: none;
+        transition: opacity 0.3s;
+      }
+
+      .footer-links a:hover {
+        opacity: 1;
+      }
+
+      .footer-bottom {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+      }
+
+      .footer-bottom-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .back-to-top {
+        background-color: var(--accent-color);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+
+      .back-to-top:hover {
+        background-color: #1d4ed8;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1024px) {
+        .stories-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .search-box {
+          display: none;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .hero-container {
+          flex-direction: column;
+        }
+
+        .blog-cards {
+          flex-direction: column;
+        }
+
+        .feature-item,
+        .feature-item:nth-child(even) {
+          flex-direction: column;
+        }
+
+        .recent-container {
+          flex-direction: column;
+        }
+
+        .footer-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .stories-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-headline {
+          font-size: 2.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">Magazine<span>Blog</span></div>
+        <div class="search-box">
+          <input type="text" placeholder="Search articles..." />
+          <i class="fas fa-search"></i>
+        </div>
+        <div class="header-actions">
+          <button class="newsletter-btn">Newsletter</button>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <h1 class="hero-headline">
+            Discover Stories, Ideas, and Inspiration
+          </h1>
+          <p class="hero-subhead">
+            Explore thought-provoking articles on design, technology, and
+            creativity from around the world.
+          </p>
+          <button class="hero-cta">Start Reading</button>
+          <div class="scroll-down">
+            <i class="fas fa-chevron-down fa-2x"></i>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            alt="Featured article"
+          />
+          <div class="social-media">
+            <a href="#" class="social-icon"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Blogs Section -->
+    <section class="trending-blogs">
+      <div class="container">
+        <h2 class="section-title">Trending Now</h2>
+        <div class="blog-cards">
+          <div class="blog-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Tech trends"
+              />
+            </div>
+            <div class="card-content">
+              <span class="card-category">Technology</span>
+              <h3 class="card-title">The Future of Web Development in 2023</h3>
+              <p class="card-excerpt">
+                Exploring the latest frameworks and tools that are shaping the
+                future of web development.
+              </p>
+              <div class="card-meta">
+                <span>June 15, 2023</span>
+                <span
+                  ><i class="far fa-eye"></i> 2.4k
+                  <i class="far fa-comment"></i> 183</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Fashion"
+              />
+            </div>
+            <div class="card-content">
+              <span class="card-category">Fashion</span>
+              <h3 class="card-title">Summer Fashion Trends You Need to Know</h3>
+              <p class="card-excerpt">
+                From bold colors to sustainable materials, discover what's hot
+                this season.
+              </p>
+              <div class="card-meta">
+                <span>June 12, 2023</span>
+                <span
+                  ><i class="far fa-eye"></i> 1.8k
+                  <i class="far fa-comment"></i> 142</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="blog-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+                alt="Travel"
+              />
+            </div>
+            <div class="card-content">
+              <span class="card-category">Travel</span>
+              <h3 class="card-title">10 Hidden Gems in Southeast Asia</h3>
+              <p class="card-excerpt">
+                Discover breathtaking destinations that are off the beaten path
+                for your next adventure.
+              </p>
+              <div class="card-meta">
+                <span>June 8, 2023</span>
+                <span
+                  ><i class="far fa-eye"></i> 2.1k
+                  <i class="far fa-comment"></i> 167</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-nav">
+          <div class="carousel-dot active"></div>
+          <div class="carousel-dot"></div>
+          <div class="carousel-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Featured Stories</h2>
+        <div class="feature-item">
+          <div class="feature-image">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+              alt="Design"
+            />
+          </div>
+          <div class="feature-content">
+            <h3 class="feature-title">
+              Minimalist Design Principles for Modern Websites
+            </h3>
+            <p class="feature-excerpt">
+              Learn how to create clean, effective designs that focus on
+              essential elements and improve user experience.
+            </p>
+            <a href="#" class="read-more"
+              >Read More <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-image">
+            <img
+              src="https://images.unsplash.com/photo-1542744094-3a31f272c490?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+              alt="Productivity"
+            />
+          </div>
+          <div class="feature-content">
+            <h3 class="feature-title">
+              Maximize Your Productivity with These Tools
+            </h3>
+            <p class="feature-excerpt">
+              Discover apps and techniques that can help you stay focused and
+              get more done in less time.
+            </p>
+            <a href="#" class="read-more"
+              >Read More <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="full-width-card">
+          <img
+            src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            alt="Photography"
+          />
+          <div class="overlay-text">
+            <h3>The Art of Storytelling Through Photography</h3>
+            <p>
+              How to capture moments that convey powerful narratives and
+              emotions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+      <div class="container">
+        <div class="banner">
+          <div class="banner-image">
+            <img
+              src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80"
+              alt="Special offer"
+            />
+          </div>
+          <div class="banner-overlay"></div>
+          <div class="banner-content">
+            <h2 class="banner-title">Special Summer Edition</h2>
+            <p class="banner-description">
+              Get exclusive access to our limited edition magazine featuring
+              in-depth articles and interviews.
+            </p>
+            <button class="banner-btn">Read More</button>
+          </div>
+          <div class="banner-dots">
+            <div class="carousel-dot active"></div>
+            <div class="carousel-dot"></div>
+            <div class="carousel-dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Stories Section -->
+    <section class="latest-stories">
+      <div class="container">
+        <h2 class="section-title">Latest Stories</h2>
+        <div class="stories-grid">
+          <div class="story-card">
+            <div class="story-image">
+              <img src="images/498.png" />
+            </div>
+            <div class="story-content">
+              <h3 class="story-title">
+                How to Build a Personal Brand in the Digital Age
+              </h3>
+              <p class="story-excerpt">
+                Strategies for establishing a strong online presence that
+                reflects your values and expertise.
+              </p>
+            </div>
+          </div>
+          <div class="story-card">
+            <div class="story-image">
+              <img src="./images/490.png" />
+            </div>
+            <div class="story-content">
+              <h3 class="story-title">
+                The Rise of Remote Work: Challenges and Opportunities
+              </h3>
+              <p class="story-excerpt">
+                Exploring how companies are adapting to the new normal of
+                distributed teams.
+              </p>
+            </div>
+          </div>
+          <div class="story-card">
+            <div class="story-image">
+              <img
+                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Story 3"
+              />
+            </div>
+            <div class="story-content">
+              <h3 class="story-title">
+                Healthy Eating Habits for Busy Professionals
+              </h3>
+              <p class="story-excerpt">
+                Simple nutrition tips that fit into even the most demanding
+                schedules.
+              </p>
+            </div>
+          </div>
+          <div class="story-card">
+            <div class="story-image">
+              <img
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Story 4"
+              />
+            </div>
+            <div class="story-content">
+              <h3 class="story-title">
+                The Future of Artificial Intelligence in Creative Industries
+              </h3>
+              <p class="story-excerpt">
+                How AI is transforming art, music, and content creation in
+                surprising ways.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recently Added Section -->
+    <section class="recently-added">
+      <div class="container">
+        <h2 class="section-title">Recently Added</h2>
+        <div class="recent-container">
+          <div class="featured-post">
+            <img
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+              alt="Featured post"
+            />
+            <div class="featured-overlay">
+              <h3 class="featured-title">
+                Sustainable Living: Small Changes with Big Impact
+              </h3>
+              <p>
+                Learn practical ways to reduce your environmental footprint
+                without sacrificing convenience.
+              </p>
+              <button class="view-more-btn">View More Posts</button>
+            </div>
+          </div>
+          <div class="widgets">
+            <div class="widget">
+              <h3 class="widget-title">Newsletter Signup</h3>
+              <p>
+                Stay updated with our latest articles and exclusive content.
+              </p>
+              <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required />
+                <button type="submit" class="subscribe-btn">Subscribe</button>
+              </form>
+            </div>
+            <div class="widget">
+              <h3 class="widget-title">Join Our Community</h3>
+              <p>
+                Become part of our growing community of writers and creators.
+              </p>
+              <button class="community-btn">Join our Team</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="logo">Magazine<span>Blog</span></div>
+            <p>
+              Bringing you the latest insights on technology, design, lifestyle,
+              and more from around the world.
+            </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h4>Policies</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Affiliate Disclosure</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Website Links</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Advertise</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="#">Technology</a></li>
+              <li><a href="#">Design</a></li>
+              <li><a href="#">Lifestyle</a></li>
+              <li><a href="#">Travel</a></li>
+              <li><a href="#">Business</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-container">
+          <p>&copy; 2023 MagazineBlog. All rights reserved.</p>
+          <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Simple script for the back to top button
+      document
+        .querySelector(".back-to-top")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+  </body>
+</html>
