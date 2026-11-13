@@ -1,0 +1,2045 @@
+# PROJECT 009: ESTAVIA — PREMIUM PROPERTY & REAL ESTATE MANAGEMENT SAAS
+
+## YOUR ROLE
+
+Act as a world-class Enterprise SaaS Product Designer, Senior Next.js Engineer, Real Estate Software Architect, and UX Interaction Specialist.
+
+Build a complete, premium-quality, highly interactive Property and Rental Management application named:
+
+**ESTAVIA**
+
+Tagline: Every Property. Perfectly Managed.
+
+This is Project 009 in a professional portfolio of 20 premium web applications.
+
+The finished product must demonstrate the visual sophistication, functionality, information architecture, and engineering quality expected from a professionally commissioned $10,000+ custom property management platform.
+
+This must NOT be:
+
+- A generic admin dashboard.
+- A static real estate website.
+- A property listing template.
+- A visual mockup with nonfunctional buttons.
+- A collection of disconnected demo pages.
+
+Build a cohesive, browser-local property management application with realistic fictional business records.
+
+The highest priorities are:
+
+1. Premium real estate management UI.
+2. Property and unit management.
+3. Tenant 360° profiles.
+4. Lease management.
+5. Accurate rent collection workflows.
+6. Maintenance request tracking.
+7. Property occupancy and financial analytics.
+8. Reliable LocalStorage persistence.
+
+All important user actions must work.
+
+---
+
+# 1. TECHNOLOGY STACK
+
+Use:
+
+- Next.js App Router
+- React
+- TypeScript with strict typing
+- Tailwind CSS
+- shadcn/ui
+- Lucide React
+- Zustand for shared application state where appropriate
+- TanStack Table
+- Recharts
+- React Hook Form
+- Zod
+- date-fns
+- decimal.js for financial calculations
+- dnd-kit for maintenance Kanban where useful
+- pdf-lib or jsPDF for client-side documents
+- LocalStorage for persistent records
+- Vitest
+- React Testing Library
+- Playwright for critical end-to-end workflows if supported
+
+Use compatible, stable dependency versions.
+
+## ABSOLUTE RESTRICTIONS
+
+Do not use:
+
+- PostgreSQL
+- MySQL
+- MongoDB
+- Firebase
+- Supabase
+- Prisma
+- External databases
+- Custom backend servers
+- External authentication providers
+- Paid APIs
+- Cloud storage
+- Real payment gateways
+- Real property listing APIs
+- Real tenant verification services
+- External document signing services
+- Real email or SMS integrations
+
+All persistent data must remain in the browser.
+
+Use LocalStorage only.
+
+Do not require registration or login.
+
+Provide instant access to a fictional demo workspace.
+
+Do not store real tenant personal information, government identification documents, bank credentials, signed legal documents, or actual financial records.
+
+This is a browser-local portfolio demonstration, not a secure production property management system.
+
+---
+
+# 2. PRODUCT VISION
+
+ESTAVIA helps landlords, property managers, real estate agencies, and rental operators manage properties, units, tenants, leases, rent collection, maintenance, and operational performance.
+
+Target users:
+
+- Property Management Companies
+- Real Estate Agencies
+- Residential Landlords
+- Commercial Property Owners
+- Apartment Building Managers
+- Rental Operations Teams
+- Real Estate Portfolio Managers
+
+## CORE WORKFLOWS
+
+1. Create and organize properties.
+2. Manage buildings and units.
+3. Track vacant and occupied units.
+4. Register fictional tenants.
+5. Assign tenants to leases.
+6. Create lease agreements.
+7. Prevent overlapping leases.
+8. Generate rent charges.
+9. Record partial and full payments.
+10. Track outstanding rent.
+11. Manage security deposit records.
+12. Renew or terminate leases.
+13. Create maintenance requests.
+14. Assign maintenance work.
+15. Track maintenance costs.
+16. Monitor property performance.
+17. Generate financial reports.
+18. Export PDF documents.
+19. Preserve business data locally.
+20. Restore demo data from validated backups.
+
+Every workflow must operate on connected application records.
+
+---
+
+# 3. PREMIUM VISUAL DESIGN IDENTITY
+
+Create a distinct original property management SaaS identity.
+
+Design inspiration:
+
+- AppFolio
+- Buildium
+- DoorLoop
+- Modern luxury real estate platforms
+- High-end enterprise property management applications
+
+Do not copy proprietary interfaces, logos, layouts, illustrations, or branded assets.
+
+## DESIGN PERSONALITY
+
+- Sophisticated
+- Architectural
+- Premium
+- Organized
+- Trustworthy
+- Modern
+- Professional
+- Elegant but operationally efficient
+
+Unlike the previous portfolio projects, ESTAVIA should combine high-quality property imagery with sophisticated business management interfaces.
+
+## LIGHT MODE COLOR PALETTE
+
+- App Background: #F8FAF9
+- Sidebar: #FFFFFF
+- Primary Surface: #FFFFFF
+- Main Text: #1C2927
+- Secondary Text: #71807B
+- Border: #E1E9E5
+- Primary Accent: #146C63
+- Accent Hover: #105A52
+- Secondary Accent: #C99B58
+- Success: #059669
+- Warning: #D97706
+- Danger: #DC2626
+- Soft Accent: #E9F5F1
+
+## DARK MODE COLOR PALETTE
+
+- App Background: #0D1514
+- Sidebar: #121F1D
+- Card Surface: #192A27
+- Elevated Surface: #203530
+- Main Text: #F7FAF8
+- Secondary Text: #9CB0AA
+- Borders: #304540
+- Primary Accent: #5BC4B4
+- Gold Accent: #D6AE72
+
+Implement semantic design tokens.
+
+## TYPOGRAPHY
+
+Use Geist or Inter for application UI.
+
+A refined display typeface may be used sparingly in the landing page and large property headings.
+
+Use tabular numbers for rent, occupancy percentages, balances, and financial amounts.
+
+## PREMIUM UI REQUIREMENTS
+
+- Precise spacing
+- Elegant property cards
+- High-quality fictional property imagery
+- Professional management tables
+- Compact financial KPIs
+- Refined status badges
+- Smooth detail drawers
+- Clean form layouts
+- Subtle shadows
+- Delicate borders
+- Excellent empty states
+- Accessible keyboard interactions
+- Purposeful microinteractions
+
+Avoid excessive gradients, neon colors, unnecessary glassmorphism, and generic dashboard decorations.
+
+---
+
+# 4. APPLICATION SHELL
+
+Build a premium, fully responsive AppShell.
+
+## SIDEBAR
+
+Top:
+
+- ESTAVIA logo
+- Portfolio workspace selector
+- Fictional property management company name
+
+Navigation groups:
+
+OVERVIEW
+- Dashboard
+- Portfolio
+- Properties
+- Units
+
+LEASING
+- Tenants
+- Leases
+- Applications
+- Occupancy
+
+FINANCIAL
+- Rent Collection
+- Transactions
+- Security Deposits
+- Expenses
+
+OPERATIONS
+- Maintenance
+- Vendors
+- Inspections
+
+INSIGHTS
+- Analytics
+- Reports
+- Activity
+
+SYSTEM
+- Team
+- Settings
+- Help
+
+Bottom:
+
+- Demo profile
+- Theme toggle
+- Sidebar collapse control
+
+Requirements:
+
+- Active route indicators
+- Collapsible sidebar
+- Icon-only mode
+- Tooltip labels
+- Smooth transitions
+- Expandable groups where useful
+- Mobile navigation drawer
+- Accessible keyboard operation
+
+## TOPBAR
+
+Include:
+
+- Breadcrumb navigation
+- Global search
+- Property selector
+- Date range selector
+- Quick Create
+- Notifications
+- Theme toggle
+- Demo profile
+
+Quick Create actions:
+
+- Add Property
+- Add Unit
+- Add Tenant
+- Create Lease
+- Record Rent Payment
+- Create Maintenance Request
+- Record Expense
+
+Every action must open a fully functional workflow.
+
+---
+
+# 5. REQUIRED APPLICATION PAGES
+
+## PAGE 01: /dashboard
+
+PROPERTY OPERATIONS OVERVIEW.
+
+Include:
+
+- Total Properties
+- Total Units
+- Occupied Units
+- Vacant Units
+- Occupancy Rate
+- Monthly Scheduled Rent
+- Rent Collected
+- Outstanding Rent
+- Active Leases
+- Expiring Leases
+- Open Maintenance Requests
+- Portfolio Value Summary where configured
+
+Charts:
+
+- Rent Collection Trend
+- Occupancy Trend
+- Revenue vs Expenses
+- Property Performance
+- Maintenance Status Distribution
+
+Additional sections:
+
+- Recently Added Properties
+- Overdue Rent
+- Upcoming Lease Expirations
+- Recent Maintenance
+- Latest Transactions
+- Quick Actions
+
+Every KPI must derive from actual local application records.
+
+Do not create unrelated hardcoded dashboard statistics.
+
+## PAGE 02: /dashboard/portfolio
+
+PROPERTY PORTFOLIO WORKSPACE.
+
+Create a premium portfolio overview.
+
+Include:
+
+- Property grid
+- Property list
+- Property image
+- Property name
+- Property type
+- Location
+- Total units
+- Occupied units
+- Vacant units
+- Occupancy rate
+- Monthly rent roll
+- Rent collection summary
+- Maintenance count
+- Property status
+- Search
+- Filters
+- Sorting
+- Property comparison
+
+Property types:
+
+- Apartment Building
+- Residential Complex
+- Commercial Building
+- Mixed-Use Property
+- Single-Family Rental
+- Townhouse Portfolio
+
+Provide visually rich property cards with actionable financial and occupancy information.
+
+## PAGE 03: /dashboard/properties
+
+PROPERTY MANAGEMENT.
+
+Include:
+
+- Property table
+- Property grid
+- Add property
+- Edit property
+- Archive property
+- Duplicate property configuration where useful
+- Property details
+- Search
+- Filtering
+- Sorting
+- Pagination
+- Bulk selection
+- CSV export
+
+Fields:
+
+- Property name
+- Property code
+- Property type
+- Address or fictional location
+- City
+- Country
+- Number of floors
+- Total units
+- Property status
+- Description
+- Amenities
+- Property imagery
+- Management notes
+
+Do not delete active leases or historical transactions when a property is archived.
+
+## PAGE 04: /dashboard/properties/[id]
+
+SIGNATURE FEATURE: PROPERTY 360° WORKSPACE.
+
+Create an exceptionally polished property detail page.
+
+Header:
+
+- Large property image
+- Property name
+- Address
+- Property type
+- Management status
+- Occupancy percentage
+- Quick actions
+
+Tabs:
+
+1. Overview
+2. Units
+3. Tenants
+4. Leases
+5. Rent Collection
+6. Maintenance
+7. Expenses
+8. Inspections
+9. Documents & Links
+10. Activity
+
+Overview:
+
+- Occupancy summary
+- Monthly scheduled rent
+- Collected rent
+- Outstanding rent
+- Unit distribution
+- Recent maintenance
+- Upcoming lease expirations
+
+Units:
+
+- All units linked to the property
+
+Tenants:
+
+- Current tenants associated through valid leases
+
+Leases:
+
+- Active and historical lease records
+
+Financial:
+
+- Property-specific rent ledger and expenses
+
+Maintenance:
+
+- Requests associated with this property
+
+Activity:
+
+- Related property events
+
+All tabs must use the same property ID.
+
+## PAGE 05: /dashboard/units
+
+UNIT MANAGEMENT.
+
+Include:
+
+- Unit list
+- Interactive unit explorer
+- Property selector
+- Building/floor selector
+- Unit number
+- Unit type
+- Bedrooms
+- Bathrooms
+- Floor area
+- Asking rent
+- Current rent
+- Occupancy status
+- Assigned tenant
+- Active lease
+- Add unit
+- Edit unit
+- Archive unit
+- Search
+- Filtering
+- Sorting
+
+Statuses:
+
+- Vacant
+- Occupied
+- Reserved
+- Unavailable
+- Under Maintenance
+
+Occupancy must derive from effective lease and reservation rules.
+
+Do not store contradictory arbitrary statuses.
+
+Prevent duplicate unit numbers within the same property and building scope.
+
+## PAGE 06: /dashboard/units/explorer
+
+SIGNATURE FEATURE: INTERACTIVE BUILDING & UNIT EXPLORER.
+
+Build a polished visual building hierarchy.
+
+Structure:
+
+Property → Building → Floor → Unit
+
+Include:
+
+- Property selector
+- Floor selector
+- Unit cards
+- Occupancy colors
+- Tenant initials
+- Unit category
+- Monthly rent
+- Lease expiration indicator
+- Maintenance status
+- Quick unit actions
+- Unit detail drawer
+
+Clicking a unit opens:
+
+- Unit details
+- Current occupancy
+- Lease information
+- Tenant
+- Rent status
+- Maintenance requests
+- Unit history
+
+Provide clear legends.
+
+Support accessible list navigation.
+
+Do not rely only on color to communicate unit status.
+
+## PAGE 07: /dashboard/tenants
+
+TENANT MANAGEMENT.
+
+Include:
+
+- Tenant directory
+- Tenant profile
+- Tenant ID
+- Fictional name
+- Fictional email
+- Fictional phone
+- Lease status
+- Current unit
+- Outstanding balance
+- Move-in date
+- Search
+- Filtering
+- Sorting
+- Pagination
+- Add tenant
+- Edit tenant
+- Archive tenant
+- Tenant profile drawer
+
+Use fictional contact records only.
+
+Do not collect real identity documents.
+
+## PAGE 08: /dashboard/tenants/[id]
+
+SIGNATURE FEATURE: TENANT 360° PROFILE.
+
+Create a premium tenant profile workspace.
+
+Header:
+
+- Avatar or initials
+- Fictional tenant name
+- Tenant ID
+- Lease status
+- Current property/unit
+- Quick actions
+
+Tabs:
+
+1. Overview
+2. Leases
+3. Rent Ledger
+4. Payments
+5. Maintenance Requests
+6. Documents & Links
+7. Activity
+
+Overview:
+
+- Current unit
+- Active lease
+- Monthly rent
+- Security deposit balance
+- Next due date
+- Outstanding rent
+- Recent activity
+
+Lease History:
+
+- Current and previous leases
+
+Rent Ledger:
+
+- Rent charges
+- Payments
+- Credits
+- Outstanding balance
+
+Maintenance:
+
+- Requests linked to the tenant
+
+Documents:
+
+- Sample lease PDFs
+- Reference links
+
+Everything must use stable tenant relationships.
+
+## PAGE 09: /dashboard/applications
+
+RENTAL APPLICATION MANAGEMENT.
+
+Include:
+
+- Application list
+- Applicant information using fictional data
+- Interested property
+- Interested unit
+- Application date
+- Requested move-in date
+- Application status
+- Notes
+- Create application
+- Edit application
+- Review application
+- Approve application
+- Reject application
+- Convert approved application to tenant and lease workflow
+
+Statuses:
+
+- Draft
+- Submitted
+- Under Review
+- Approved
+- Rejected
+- Converted
+
+Do not implement actual identity verification or credit checks.
+
+Prevent duplicate conversion.
+
+Approving an application must not silently activate a conflicting lease.
+
+## PAGE 10: /dashboard/leases
+
+LEASE MANAGEMENT.
+
+This is a critical feature.
+
+Include:
+
+- Lease list
+- Lease ID
+- Property
+- Unit
+- Tenant
+- Start date
+- End date
+- Monthly rent
+- Security deposit
+- Payment due day
+- Billing frequency
+- Lease status
+- Create lease
+- Edit draft lease
+- Activate lease
+- Renew lease
+- Terminate lease
+- Expire lease
+- Search
+- Filtering
+- Sorting
+- Lease details
+- Sample lease PDF
+
+Statuses:
+
+- Draft
+- Scheduled
+- Active
+- Expired
+- Terminated
+- Cancelled
+
+A unit must not have overlapping exclusive active or scheduled lease periods.
+
+Lease activation must validate:
+
+- Unit exists.
+- Tenant exists.
+- Date range is valid.
+- Rent amount is non-negative.
+- Unit is eligible for leasing.
+- No conflicting exclusive lease interval exists.
+
+Use clear rules for renewals and termination.
+
+Preserve historical lease snapshots.
+
+## PAGE 11: /dashboard/leases/[id]
+
+LEASE DETAIL WORKSPACE.
+
+Include:
+
+- Lease overview
+- Property
+- Unit
+- Tenant
+- Rent amount
+- Payment schedule
+- Security deposit
+- Start date
+- End date
+- Current status
+- Rent invoices
+- Payment history
+- Lease activity
+- Renewal history
+- Termination information
+- Sample document preview
+- Download PDF
+
+The sample PDF must be clearly marked:
+
+"SAMPLE LEASE — NOT A LEGAL AGREEMENT"
+
+Do not provide legally enforceable signing functionality.
+
+## PAGE 12: /dashboard/occupancy
+
+OCCUPANCY MANAGEMENT.
+
+Include:
+
+- Total leasable units
+- Occupied units
+- Vacant units
+- Reserved units
+- Unavailable units
+- Occupancy rate
+- Vacancy rate
+- Occupancy by property
+- Occupancy by unit type
+- Upcoming move-outs
+- Lease expiration calendar
+- Vacancy duration where records support it
+- Unit availability table
+
+Document occupancy formulas.
+
+Distinguish occupied, reserved, and temporarily unavailable units.
+
+Do not count units without valid occupancy records as occupied.
+
+## PAGE 13: /dashboard/rent
+
+SIGNATURE FEATURE: RENT COLLECTION WORKSPACE.
+
+Include:
+
+- Monthly rent roll
+- Rent charges
+- Rent invoices
+- Tenant
+- Property
+- Unit
+- Lease
+- Billing period
+- Due date
+- Total amount
+- Amount paid
+- Outstanding balance
+- Status
+- Search
+- Filtering
+- Sorting
+- Generate monthly charges
+- Record partial payment
+- Record full payment
+- Apply valid credits
+- Reverse incorrect payment
+- Print invoice
+- Download receipt
+- CSV export
+
+Statuses:
+
+- Unpaid
+- Partially Paid
+- Paid
+- Overdue
+- Voided
+
+Generate rent charges only for valid lease periods.
+
+Prevent duplicate rent charges for the same lease and billing period.
+
+Do not charge outside the lease's eligible period without explicitly configured rules.
+
+Rent collection must reflect actual recorded demo payments.
+
+## PAGE 14: /dashboard/transactions
+
+FINANCIAL TRANSACTION LEDGER.
+
+Include:
+
+- Transaction records
+- Date
+- Property
+- Unit
+- Tenant
+- Lease
+- Transaction type
+- Amount
+- Payment method label
+- Reference
+- Notes
+- Search
+- Filtering
+- Sorting
+- CSV export
+
+Types:
+
+- Rent Payment
+- Rent Credit
+- Payment Reversal
+- Security Deposit Receipt
+- Security Deposit Return
+- Expense Payment
+- Other Adjustment
+
+Do not double-count reversed records.
+
+Never claim real money transfers.
+
+## PAGE 15: /dashboard/deposits
+
+SECURITY DEPOSIT MANAGEMENT.
+
+Include:
+
+- Deposit ledger
+- Tenant
+- Lease
+- Required deposit
+- Deposit received
+- Amount held
+- Deposit deductions
+- Deposit returned
+- Outstanding deposit balance
+- Record deposit receipt
+- Record deduction
+- Record return
+- Transaction history
+
+Keep security deposits separate from rental revenue.
+
+Do not automatically treat held deposits as income.
+
+This is a simplified demonstration, not a jurisdiction-compliant trust accounting system.
+
+## PAGE 16: /dashboard/expenses
+
+PROPERTY EXPENSE MANAGEMENT.
+
+Include:
+
+- Expense list
+- Property
+- Unit where applicable
+- Expense category
+- Vendor
+- Description
+- Date
+- Amount
+- Payment status
+- Add expense
+- Edit expense
+- Record expense payment
+- Archive expense
+- Search
+- Filters
+- CSV export
+
+Categories:
+
+- Repairs
+- Utilities
+- Cleaning
+- Insurance
+- Property Taxes
+- Management
+- Landscaping
+- Other
+
+Use fictional expense records.
+
+## PAGE 17: /dashboard/maintenance
+
+SIGNATURE FEATURE: MAINTENANCE WORK ORDER MANAGEMENT.
+
+Create a Kanban and List workspace.
+
+Stages:
+
+1. New
+2. Reviewed
+3. Assigned
+4. In Progress
+5. Resolved
+6. Closed
+7. Cancelled
+
+Include:
+
+- Maintenance request ID
+- Property
+- Unit
+- Tenant
+- Issue title
+- Category
+- Priority
+- Description
+- Reported date
+- Assigned vendor
+- Due date
+- Estimated cost
+- Actual cost
+- Status
+- Create request
+- Edit request
+- Assign vendor
+- Change status
+- Add comments
+- Record expense
+- Close request
+- Search
+- Filtering
+- Kanban drag-and-drop
+- Maintenance detail drawer
+
+A maintenance work order must reference valid property and unit records.
+
+Actual costs must link to expense records where appropriate.
+
+Do not automatically duplicate maintenance cost in financial reporting.
+
+## PAGE 18: /dashboard/vendors
+
+VENDOR MANAGEMENT.
+
+Include:
+
+- Vendor directory
+- Business name
+- Service category
+- Fictional contact information
+- Assigned work orders
+- Completed work orders
+- Estimated costs
+- Recorded expenses
+- Add vendor
+- Edit vendor
+- Archive vendor
+- Vendor details
+- Search
+- Filtering
+
+Use fictional vendors.
+
+No real communication integrations.
+
+## PAGE 19: /dashboard/inspections
+
+PROPERTY INSPECTION MANAGEMENT.
+
+Include:
+
+- Inspection list
+- Property
+- Unit
+- Inspection date
+- Inspection type
+- Assigned demo staff
+- Checklist items
+- Condition ratings
+- Notes
+- Status
+- Create inspection
+- Edit inspection
+- Complete inspection
+- Inspection history
+- Print-friendly summary
+
+Types:
+
+- Move-In
+- Routine
+- Move-Out
+- Maintenance Follow-up
+
+Do not treat the inspection checklist as legally binding property condition evidence.
+
+## PAGE 20: /dashboard/analytics
+
+PROPERTY ANALYTICS.
+
+Include:
+
+- Occupancy trend
+- Vacancy rate
+- Scheduled rent
+- Collected rent
+- Outstanding rent
+- Collection rate
+- Expenses by property
+- Operating cash flow
+- Property performance
+- Lease expirations
+- Maintenance cost trend
+- Unit type distribution
+- Portfolio comparison
+- Date range filters
+
+All metrics must use consistent application data.
+
+Document calculation definitions.
+
+Avoid presenting appraised market values unless explicitly entered as fictional demo assumptions.
+
+## PAGE 21: /dashboard/reports
+
+REPORTING CENTER.
+
+Include:
+
+- Property Portfolio Report
+- Unit Occupancy Report
+- Vacancy Report
+- Lease Expiration Report
+- Rent Roll Report
+- Rent Collection Report
+- Outstanding Rent Report
+- Security Deposit Report
+- Maintenance Report
+- Property Expense Report
+- Operating Performance Report
+
+Support:
+
+- Property filtering
+- Unit filtering
+- Date range
+- Lease status filtering
+- CSV export
+- Print-friendly report
+- Saved report configurations
+
+All reports must reflect the current local dataset.
+
+---
+
+# 6. ADDITIONAL SUPPORTING WORKSPACES
+
+Also implement these routes:
+
+## /dashboard/team
+
+Demo team management.
+
+Roles:
+
+- Property Owner
+- Portfolio Manager
+- Property Manager
+- Leasing Agent
+- Maintenance Coordinator
+- Viewer
+
+Provide role previews and fictional assignments.
+
+No real secure access control.
+
+## /dashboard/activity
+
+Local activity timeline.
+
+Include:
+
+- Property created
+- Unit added
+- Tenant created
+- Lease activated
+- Lease renewed
+- Rent charged
+- Payment recorded
+- Maintenance assigned
+- Maintenance closed
+- Deposit returned
+
+Support date filtering and related entity navigation.
+
+## /dashboard/settings
+
+Include:
+
+- Company profile
+- Company logo
+- Currency
+- Date format
+- Timezone
+- Rent due-day defaults
+- Lease configuration
+- Fee and late-charge demonstration rules
+- Occupancy settings
+- Maintenance priority settings
+- Theme
+- Sidebar behavior
+- Notifications
+- JSON backup
+- JSON restore
+- Reset demo data
+
+Late fees must not be silently applied without an explicit fictional fee rule.
+
+Do not claim local rental-law compliance.
+
+## /dashboard/help
+
+Include:
+
+- Getting started
+- Property setup
+- Unit management
+- Tenant management
+- Lease lifecycle
+- Rent collection
+- Security deposits
+- Maintenance
+- Reports
+- Data backup
+- LocalStorage limitations
+- Frequently asked questions
+
+---
+
+# 7. PROPERTY DATA ARCHITECTURE
+
+Create strongly typed TypeScript models:
+
+- Property
+- Building
+- Floor
+- Unit
+- Tenant
+- RentalApplication
+- Lease
+- LeaseRenewal
+- RentCharge
+- RentPayment
+- PaymentAllocation
+- SecurityDepositTransaction
+- PropertyExpense
+- MaintenanceRequest
+- MaintenanceComment
+- Vendor
+- Inspection
+- InspectionChecklistItem
+- Activity
+- DemoTeamMember
+- SavedReport
+- WorkspaceSettings
+
+Use stable identifiers.
+
+Entity relationships:
+
+- Property has Buildings.
+- Building has Floors where applicable.
+- Floor has Units.
+- Unit belongs to Property.
+- Tenant can have multiple historical Leases.
+- Lease references Unit and Tenant.
+- Rent Charge references Lease.
+- Payment Allocation references Rent Charge.
+- Security Deposit Transaction references Lease.
+- Maintenance Request references Property and optionally Unit and Tenant.
+- Inspection references Property and Unit where applicable.
+- Vendor can be associated with Maintenance Requests.
+
+Do not duplicate entire mutable entity objects across records.
+
+Use IDs and selectors.
+
+Preserve historical financial and lease snapshots.
+
+---
+
+# 8. LEASE LIFECYCLE ENGINE
+
+THIS IS THE MOST IMPORTANT BUSINESS LOGIC.
+
+Build a centralized Lease Management Engine.
+
+## REQUIRED VALIDATIONS
+
+When creating or activating a lease:
+
+1. Tenant must exist.
+2. Unit must exist.
+3. Property must exist.
+4. Lease start date must be valid.
+5. Lease end date must be later than start date.
+6. Rent amount must be non-negative.
+7. Security deposit must be valid.
+8. Unit must be eligible for leasing.
+9. Lease period must not conflict with another exclusive Scheduled or Active Lease.
+10. Lease status transition must be valid.
+
+Use half-open date intervals:
+
+[startDate, endDate)
+
+Two leases overlap when:
+
+startA < endB AND startB < endA
+
+If the UI displays an inclusive last day, convert that explicitly to a half-open stored interval.
+
+Never mix inclusive and exclusive date conventions.
+
+## LEASE STATUS TRANSITIONS
+
+Draft → Scheduled → Active → Expired
+
+Additional transitions:
+
+- Draft → Cancelled
+- Scheduled → Cancelled
+- Active → Terminated
+- Active → Renewed through a validated renewal workflow
+
+Do not overwrite historical leases when renewed.
+
+Create a new lease term or versioned renewal record.
+
+Document the chosen model.
+
+Prevent repeated renewal actions from creating duplicates.
+
+## UNIT OCCUPANCY
+
+Compute occupancy from effective lease and availability records.
+
+Do not manually store contradictory occupancy flags.
+
+An Active Lease should count as occupied only for its valid effective period.
+
+A future Scheduled Lease should not automatically count as a current occupant.
+
+Distinguish reservations and maintenance unavailability from actual occupancy.
+
+---
+
+# 9. RENT GENERATION ENGINE
+
+Create centralized recurring rent generation logic.
+
+Use lease ID and billing period to identify a unique rent charge.
+
+Example idempotency identity:
+
+leaseId + billingPeriod + chargeType
+
+Prevent duplicate rent invoices if Generate Rent is clicked multiple times.
+
+Support:
+
+- Monthly rent
+- Partial payment
+- Full payment
+- Credits
+- Due dates
+- Overdue status
+- Payment reversal
+- Lease start/end boundaries
+
+If partial-month proration is enabled, document the formula clearly.
+
+Do not silently assume all leases require the same prorating method.
+
+Because there is no backend scheduler, due charges must be generated by an explicit local action or an idempotent application-opening reconciliation workflow.
+
+Do not claim automatic generation while the browser is closed.
+
+---
+
+# 10. FINANCIAL CALCULATION ENGINE
+
+Use decimal.js or integer minor units.
+
+Avoid floating-point currency errors.
+
+Definitions:
+
+Scheduled Rent = Sum of Valid Rent Charges for Selected Period
+
+Collected Rent = Sum of Valid Allocated Rent Payments
+
+Outstanding Rent = Valid Rent Charges − Allocated Payments − Applicable Credits
+
+Collection Rate = Collected Rent / Eligible Rent Charges × 100
+
+Operating Cash Flow = Actual Cash Receipts − Actual Paid Operating Expenses
+
+Occupancy Rate = Occupied Leasable Units / Total Eligible Leasable Units × 100
+
+Handle zero denominators.
+
+Security deposits must not be counted as rental revenue.
+
+Reversals must not be double-counted.
+
+Clearly distinguish rent charges, receivables, deposits, and cash collections.
+
+This application is not a full double-entry accounting system.
+
+---
+
+# 11. MAINTENANCE WORKFLOW ENGINE
+
+Create validated maintenance status transitions.
+
+Requirements:
+
+- New work order creation.
+- Assign to fictional vendor or staff.
+- Start work.
+- Track progress.
+- Record notes.
+- Resolve work.
+- Close work.
+- Reopen where explicitly permitted.
+- Cancel eligible work.
+
+Maintenance expenses must be represented once in financial summaries.
+
+Do not double-count both estimated costs and actual recorded expenses.
+
+If an estimated cost is entered, distinguish it from a paid expense.
+
+Preserve maintenance history.
+
+---
+
+# 12. LOCALSTORAGE ARCHITECTURE
+
+Implement a centralized, versioned persistence layer.
+
+Suggested keys:
+
+estavia:version
+estavia:data
+estavia:settings
+estavia:ui
+
+Requirements:
+
+- Typed access
+- Zod validation
+- Deterministic demo seed
+- Safe initialization
+- Schema migrations
+- Corrupt data recovery
+- Storage quota handling
+- JSON backup
+- JSON restore
+- Reset demo data
+- Referential integrity validation
+- Stable transaction IDs
+- Consistent cross-page state
+- Safe Next.js hydration
+
+Do not use scattered LocalStorage writes.
+
+Never overwrite saved data on refresh.
+
+Use pure business functions for multi-record state transitions.
+
+Validate full state before persistence.
+
+Do not claim database-style concurrency guarantees.
+
+Avoid storing large uploaded property photos.
+
+Use bundled optimized fictional property images and lightweight reference URLs.
+
+---
+
+# 13. REALISTIC FICTIONAL DEMO DATA
+
+Create a realistic fictional property management business.
+
+Suggested dataset:
+
+- 12 Properties
+- 20 Buildings
+- 100 Floors or floor references
+- 350 Units
+- 280 Tenants
+- 300 Historical Leases
+- 100 Rental Applications
+- 1,000 Rent Charges
+- 850 Rent Payments
+- 150 Security Deposit Transactions
+- 200 Expenses
+- 150 Maintenance Requests
+- 35 Vendors
+- 100 Inspections
+- 400 Activity Records
+
+Use approximately 12 months of historical financial activity.
+
+Include:
+
+- Fully occupied properties
+- Partially vacant buildings
+- Vacant units
+- Reserved units
+- Expiring leases
+- Expired leases
+- Partial rent payments
+- Overdue rent
+- Maintenance requests
+- Completed repairs
+- Security deposits
+- Operational expenses
+
+Ensure all relationships are valid.
+
+Never generate overlapping active leases for the same exclusive unit.
+
+Use deterministic seed generation.
+
+Reduce record counts if necessary to stay within practical LocalStorage limits.
+
+Prioritize consistency and performance over exact row counts.
+
+---
+
+# 14. GLOBAL SEARCH
+
+Ctrl/Cmd + K opens Command Palette.
+
+Search:
+
+- Properties
+- Units
+- Tenants
+- Leases
+- Rent Charges
+- Maintenance Requests
+- Vendors
+- Application Pages
+
+Commands:
+
+- Add Property
+- Add Unit
+- Add Tenant
+- Create Lease
+- Record Payment
+- Create Maintenance Request
+- Switch Theme
+
+Implement keyboard navigation, grouped results, search highlighting, and accessible focus management.
+
+Search results must open actual records.
+
+---
+
+# 15. PREMIUM COMPONENT LIBRARY
+
+Create reusable components:
+
+- AppShell
+- Sidebar
+- Topbar
+- PageHeader
+- PropertyCard
+- PropertyPortfolioGrid
+- PropertyDetailHeader
+- UnitExplorer
+- FloorUnitGrid
+- UnitStatusBadge
+- OccupancyChart
+- RentCollectionChart
+- TenantProfile
+- TenantDetailDrawer
+- LeaseBuilder
+- LeaseTimeline
+- RentLedger
+- PaymentDialog
+- MaintenanceKanban
+- MaintenanceDetailDrawer
+- VendorPicker
+- InspectionChecklist
+- FinancialStatCard
+- DateRangePicker
+- DataTable
+- FilterToolbar
+- ConfirmDialog
+- EmptyState
+- LoadingSkeleton
+- Toast
+- GlobalSearch
+- ThemeToggle
+
+Maintain a consistent original design system.
+
+Do not duplicate entire features in unrelated components.
+
+---
+
+# 16. RESPONSIVE DESIGN
+
+Support:
+
+- 360px mobile
+- 390px mobile
+- 768px tablet
+- 1024px laptop
+- 1440px desktop
+- 1920px wide desktop
+
+Desktop:
+
+- Full sidebar
+- Property grids
+- Building explorer
+- Dense rent tables
+- Tenant detail drawers
+- Maintenance Kanban
+
+Tablet:
+
+- Collapsible navigation
+- Adaptive property cards
+- Responsive finance views
+
+Mobile:
+
+- Navigation drawer
+- Property cards
+- Unit list alternative
+- Tenant profile tabs
+- Touch-friendly lease forms
+- Rent payment dialogs
+- Maintenance list view
+- Responsive financial tables
+- No accidental page overflow
+
+Horizontal scrolling is permitted inside intentionally scrollable data regions.
+
+Essential actions must not require hover.
+
+---
+
+# 17. ACCESSIBILITY
+
+Target WCAG 2.2 AA.
+
+Include:
+
+- Semantic HTML
+- Keyboard navigation
+- Accessible dialogs
+- Proper form labels
+- Visible focus states
+- Good text contrast
+- Accessible occupancy indicators
+- Reduced-motion support
+- Helpful validation errors
+- Keyboard-accessible maintenance workflow
+- Screen-reader-friendly table headers
+
+Do not use color alone to indicate occupancy, rent status, or maintenance priority.
+
+---
+
+# 18. PERFORMANCE
+
+Optimize:
+
+- Property grid rendering
+- Large unit tables
+- Rent ledger calculations
+- Lease conflict validation
+- Financial charts
+- Maintenance Kanban
+- LocalStorage persistence
+- Search
+- PDF generation
+
+Use memoized selectors where useful.
+
+Do not recalculate the entire portfolio after unrelated UI changes.
+
+Lazy-load heavy document-generation libraries where appropriate.
+
+Use pagination or virtualization for large tables.
+
+Avoid unnecessary dependencies.
+
+---
+
+# 19. TESTING REQUIREMENTS
+
+Create tests for:
+
+1. Property creation.
+2. Property editing.
+3. Property archive.
+4. Unit creation.
+5. Unit uniqueness.
+6. Unit editing.
+7. Unit occupancy derivation.
+8. Tenant creation.
+9. Tenant editing.
+10. Rental application creation.
+11. Application conversion.
+12. Lease creation.
+13. Lease date validation.
+14. Overlapping lease prevention.
+15. Back-to-back lease acceptance.
+16. Scheduled lease activation.
+17. Lease expiration.
+18. Lease termination.
+19. Lease renewal.
+20. Duplicate renewal prevention.
+21. Rent charge generation.
+22. Duplicate rent prevention.
+23. Partial payment.
+24. Full payment.
+25. Payment reversal.
+26. Overdue balance calculation.
+27. Security deposit receipt.
+28. Security deposit return.
+29. Deposit exclusion from rental revenue.
+30. Occupancy rate calculation.
+31. Vacancy calculation.
+32. Maintenance creation.
+33. Maintenance assignment.
+34. Maintenance stage movement.
+35. Maintenance cost handling.
+36. Expense creation.
+37. Cash flow calculation.
+38. Property-level reports.
+39. Portfolio analytics consistency.
+40. Lease PDF generation.
+41. Rent receipt PDF generation.
+42. CSV export.
+43. Search.
+44. Filtering.
+45. Sorting.
+46. Pagination.
+47. JSON backup.
+48. JSON restore.
+49. Invalid backup rejection.
+50. Corrupt LocalStorage recovery.
+51. Reset demo data.
+52. Theme persistence.
+53. Mobile navigation.
+54. Cross-page financial consistency.
+55. Referential integrity after archive actions.
+
+Run:
+
+- TypeScript typecheck
+- ESLint
+- Vitest
+- Critical end-to-end tests where supported
+- Production build
+
+Never claim tests passed unless executed.
+
+---
+
+# 20. PROJECT ARCHITECTURE
+
+Use maintainable feature-based architecture.
+
+Suggested:
+
+src/
+  app/
+    page.tsx
+    dashboard/
+      page.tsx
+      portfolio/
+      properties/
+      units/
+      tenants/
+      applications/
+      leases/
+      occupancy/
+      rent/
+      transactions/
+      deposits/
+      expenses/
+      maintenance/
+      vendors/
+      inspections/
+      analytics/
+      reports/
+      team/
+      activity/
+      settings/
+      help/
+  components/
+    layout/
+    ui/
+    properties/
+    units/
+    tenants/
+    leasing/
+    rent/
+    maintenance/
+    finance/
+    charts/
+    tables/
+    forms/
+  features/
+    properties/
+    units/
+    tenants/
+    leases/
+    rent/
+    maintenance/
+    reporting/
+  lib/
+    lease-engine/
+    rent-engine/
+    occupancy-engine/
+    financial-calculations/
+    storage/
+    validation/
+    seed/
+    pdf/
+    export/
+  stores/
+  hooks/
+  types/
+  tests/
+
+Keep lease, rent, occupancy, and financial calculations separate from React UI components.
+
+Avoid monolithic page files.
+
+---
+
+# 21. IMPLEMENTATION PHASES
+
+PHASE 1: Visual Foundation
+
+- Initialize Next.js.
+- Configure Tailwind CSS.
+- Establish design tokens.
+- Create premium AppShell.
+- Sidebar and Topbar.
+- Light and Dark Mode.
+- Responsive navigation.
+
+PHASE 2: Data Foundation
+
+- Define TypeScript models.
+- Establish entity relationships.
+- Build LocalStorage repository.
+- Create deterministic seed data.
+- Implement validation.
+- Create central application state.
+
+PHASE 3: Core Property Management
+
+- Property CRUD.
+- Portfolio overview.
+- Buildings and floors.
+- Unit CRUD.
+- Interactive Unit Explorer.
+- Property 360° View.
+
+PHASE 4: Leasing
+
+- Tenant CRUD.
+- Tenant 360° Profile.
+- Rental applications.
+- Lease creation.
+- Lease conflict engine.
+- Renewal and termination.
+
+PHASE 5: Financial Operations
+
+- Rent generation.
+- Rent collection.
+- Partial payments.
+- Transaction ledger.
+- Security deposits.
+- Property expenses.
+- PDF documents.
+
+PHASE 6: Property Operations
+
+- Maintenance Kanban.
+- Vendors.
+- Inspections.
+- Occupancy management.
+- Activity timeline.
+
+PHASE 7: Insights
+
+- Executive Dashboard.
+- Property analytics.
+- Financial reports.
+- Portfolio comparisons.
+
+PHASE 8: Quality
+
+- Settings.
+- Help.
+- Global search.
+- Mobile refinements.
+- Accessibility.
+- Automated tests.
+- Production build.
+
+Maintain a working application after each phase.
+
+Do not replace functional depth with superficial page count.
+
+---
+
+# 22. STRICT QUALITY RULES
+
+DO NOT:
+
+- Build a static real estate dashboard.
+- Create decorative property cards with no actions.
+- Use disconnected property and unit records.
+- Allow overlapping exclusive leases.
+- Create duplicate monthly rent charges.
+- Treat security deposits as rental income.
+- Count unpaid rent as collected cash.
+- Allow duplicate payment application.
+- Lose historical lease information.
+- Double-count maintenance expenses.
+- Use real tenant personal data.
+- Claim secure tenant authentication.
+- Claim legal contract enforceability.
+- Claim real payment processing.
+- Require a database.
+- Require a backend.
+- Leave placeholder pages.
+- Use Lorem Ipsum.
+- Add nonfunctional controls.
+- Ignore responsive behavior.
+- Ignore accessibility.
+- Claim unverified tests passed.
+
+Every major business workflow must function using the shared browser-local dataset.
+
+---
+
+# 23. DELIVERABLES
+
+Deliver:
+
+1. Complete Next.js application.
+2. Original ESTAVIA branding.
+3. Premium Property Dashboard.
+4. Property Portfolio.
+5. Property Management.
+6. Property 360° Detail.
+7. Unit Management.
+8. Interactive Building & Unit Explorer.
+9. Tenant Directory.
+10. Tenant 360° Profile.
+11. Rental Applications.
+12. Lease Management.
+13. Lease Lifecycle Engine.
+14. Occupancy Dashboard.
+15. Rent Collection.
+16. Transaction Ledger.
+17. Security Deposit Management.
+18. Property Expenses.
+19. Maintenance Kanban.
+20. Vendor Management.
+21. Property Inspections.
+22. Property Analytics.
+23. Reporting Center.
+24. Team Demo.
+25. Activity Timeline.
+26. Workspace Settings.
+27. Help Documentation.
+28. Global Search.
+29. Light and Dark Mode.
+30. Responsive Layouts.
+31. LocalStorage Persistence.
+32. JSON Backup and Restore.
+33. CSV Exports.
+34. Client-side PDF Documents.
+35. Automated Tests.
+36. README.md.
+37. Vercel-Compatible Production Build.
+
+README must include:
+
+"Portfolio Demonstration vs Production Property Management Software"
+
+Explain that this is a local-only demo without secure tenant authentication, real payment processing, cloud synchronization, legally enforceable lease signing, or production-grade accounting.
+
+---
+
+# 24. FINAL ACCEPTANCE GATE
+
+Do not report the project as complete unless:
+
+- Every route renders.
+- Property CRUD works.
+- Unit CRUD works.
+- Building Explorer works.
+- Tenant profiles use consistent data.
+- Lease creation validates availability.
+- Overlapping leases are prevented.
+- Lease renewals work.
+- Unit occupancy updates correctly.
+- Rent invoices generate correctly.
+- Duplicate rent generation is prevented.
+- Partial payments update balances.
+- Overdue rent is calculated correctly.
+- Security deposits are tracked separately.
+- Maintenance workflows work.
+- Property expenses update reports.
+- PDFs download successfully.
+- Analytics use actual records.
+- Search and filtering work.
+- JSON backup and restore work.
+- LocalStorage survives refresh.
+- Light and Dark Mode are polished.
+- Mobile workflows are usable.
+- No critical dead buttons remain.
+- No database is required.
+- No backend is required.
+- Production build passes.
+- Automated test results are reported honestly.
+
+If any feature is incomplete or unverified, list it explicitly.
+
+---
+
+# FINAL INSTRUCTION
+
+Build ESTAVIA as a sophisticated, premium, browser-local Property & Real Estate Management application.
+
+Prioritize these signature experiences:
+
+1. Property Portfolio Dashboard.
+2. Interactive Building & Unit Explorer.
+3. Tenant 360° Profile.
+4. Lease Management and Conflict Prevention.
+5. Rent Collection and Financial Ledger.
+6. Maintenance Kanban.
+7. Occupancy and Property Analytics.
+
+The visual experience must be refined, original, and credible as a high-value professional software portfolio project.
+
+The business workflows must be functional and internally consistent.
+
+Begin with the property data model, lease lifecycle engine, rent calculation rules, and premium design system.
+
+Implement systematically, test important workflows, and accurately report any limitations.

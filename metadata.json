@@ -1,0 +1,6 @@
+{
+  "name": "ESTAVIA — Property & Real Estate Management SaaS",
+  "description": "Every Property. Perfectly Managed. Enterprise-grade browser-local property, unit, tenant, lease, rent collection, and maintenance management platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

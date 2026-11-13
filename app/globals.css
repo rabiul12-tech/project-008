@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-app: #F8FAF9;
+    --bg-sidebar: #FFFFFF;
+    --bg-surface: #FFFFFF;
+    --bg-elevated: #F1F5F3;
+    --bg-soft-accent: #E9F5F1;
+    --text-main: #1C2927;
+    --text-secondary: #71807B;
+    --border-subtle: #E1E9E5;
+    --accent-primary: #146C63;
+    --accent-hover: #105A52;
+    --accent-gold: #C99B58;
+    --status-success: #059669;
+    --status-warning: #D97706;
+    --status-danger: #DC2626;
+  }
+
+  .dark {
+    --bg-app: #0D1514;
+    --bg-sidebar: #121F1D;
+    --bg-surface: #192A27;
+    --bg-elevated: #203530;
+    --bg-soft-accent: #16302B;
+    --text-main: #F7FAF8;
+    --text-secondary: #9CB0AA;
+    --border-subtle: #304540;
+    --accent-primary: #5BC4B4;
+    --accent-hover: #48B0A0;
+    --accent-gold: #D6AE72;
+    --status-success: #10B981;
+    --status-warning: #F59E0B;
+    --status-danger: #EF4444;
+  }
+
+  body {
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
